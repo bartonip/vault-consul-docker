@@ -2,16 +2,16 @@
 FROM alpine:3.14
 
 # set consul version
-ENV CONSUL_VERSION 1.10.2
+ENV CONSUL_VERSION 1.13.2
 
 # create a new directory
 RUN mkdir /consul
 
 # download dependencies
 RUN apk --no-cache add \
-      bash \
-      ca-certificates \
-      wget
+    bash \
+    ca-certificates \
+    wget
 
 # download and set up consul
 RUN wget --quiet --output-document=/tmp/consul.zip https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \

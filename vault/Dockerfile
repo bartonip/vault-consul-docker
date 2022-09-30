@@ -2,16 +2,16 @@
 FROM alpine:3.14
 
 # set vault version
-ENV VAULT_VERSION 1.8.2
+ENV VAULT_VERSION 1.11.4
 
 # create a new directory
 RUN mkdir /vault
 
 # download dependencies
 RUN apk --no-cache add \
-      bash \
-      ca-certificates \
-      wget
+    bash \
+    ca-certificates \
+    wget
 
 # download and set up vault
 RUN wget --quiet --output-document=/tmp/vault.zip https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
